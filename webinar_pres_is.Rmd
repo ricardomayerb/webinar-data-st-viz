@@ -27,6 +27,19 @@ source("theme/theme_swd.R")
 
 ```
 
+## Qué veremos hoy?
+
+- Contexto:
+    + Qué es Data Storytelling
+    + Cuando usarlo
+    + Ejemplos (pocos! y rápidos!) en comunicación masiva
+    
+- Data Storytelling
+    + Lecciones en Data Storytelling
+    + **Ejemplo (largo! detallado!) de Storytelling en contexto de negocios** 
+
+- Cierre
+
 ## Qué es Data Storytelling?
 
 **Lecciones narrativas + comunicación de datos**
