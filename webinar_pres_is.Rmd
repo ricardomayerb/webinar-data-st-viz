@@ -1,8 +1,12 @@
 ---
-title: "Data storytelling"
+title: "Data Storytelling"
 author: "Ricardo Mayer"
 date: "08-05-2021"
-output: ioslides_presentation
+output: 
+  ioslides_presentation:
+    incremental: true
+    logo: "Logo_CIEN.png"
+    css: styles.css
 ---
 
 ```{r setup, include=FALSE}
@@ -23,68 +27,83 @@ source("theme/theme_swd.R")
 
 ```
 
-## Qué es data storytelling?
+## Qué es Data Storytelling?
 
-**Lecciones narrativas + comunicación de datos efectiva**
+**Lecciones narrativas + comunicación de datos**
 
-+ Lecciones narrativas:
-  - Establece tu audiencia
-  - Establece tu objetivo
-  - Crea un arco narrativo
-  - Consigue, concentra y mantiene su atención
-  
-+ Comunicación de datos
-  - Elije el nivel de detalle
-  - La forma sigue a la función
-  - Elimina lo innecesario
-  - Documento para presentar o para circular?
-  
+-   Lecciones narrativas:
 
-## Necesito data storytelling2?
+    -   Cómo estructurar la historia
+    -   Cómo hacer que recuerden tu historia
 
-Baja necesidad: análisis exploratorio, archivar datos, traspaso de datos, auditoría
+-   Comunicación de datos efectiva
 
-Necesidad media: audiencia cautiva, indicadores rutinarios, audiencia experta, future-proofing
+    -   Nivel de detalle acorde a la audiencia y al contexto
+    -   Cómo las personas consumen información?
 
-Necesidad alta: capturar atención, inducir una acción, audiencia con poca experiencia, presentar The Big Idea, periodismo de datos 
+## Necesito Data Storytelling?
 
-## Data storytelling en negocios
+-   [Baja necesidad:]{style="color : blue"}análisis exploratorio, archivar datos, traspaso de datos, auditoría
 
-+ Primera asociación es con periodismo de datos, audiencias masivas (y heterogéneas)
+-   [Necesidad media:]{style="color : orange"} audiencia cautiva, indicadores rutinarios, audiencia experta, future-proofing
 
-+ Sin embargo es muy útil en contextos de negocios
+-   [Necesidad alta:]{style="color : red"}capturar atención, inducir una acción, audiencia no experta, situación Big Idea, periodismo de datos, comunicación masiva
 
-  - audiencia con tiempo limitado de atención
-  
-  - audiencia debe escuchar presentaciones que no son de su especialidad
-  
-  - interacciones dedicadas a la toma de decisiones 
-  
- + Énfasis difieren, conjunto de lecciones es similar
-  
-## Lecciones del data storytelling
+## DST en comunicación masiva (I)
 
-  + Facilitar identificación y retención: contexto, conflicto y resolución. Mencionar humanos.
-  
-  + Facilitar la comprensión: la forma sigue a la función, elegir elemento que sea más fácil de comprender. Anotaciones >> leyendas. 
-  
-  + Concentrar la atención: eliminar distracciones, inconsistencias y el exceso de información.
-  
-  + Guiar la atención: mover la atención a las partes que nos interesa que procesen.
+FiveThirtyEight: cómo cambió USA durante Obama?
 
+![](538_obama.png){width="80%"}
+
+## DST en comunicación masiva (II)
+
+ProPública: trabajo y racismo en USA
+
+![](propublica_racism.png){width="100%"}
+
+## Data Storytelling en negocios
+
+-   Primera asociación es con periodismo de datos, audiencias masivas
+
+-   Sin embargo, es muy útil en contextos de negocios
+
+    -   audiencia con tiempo limitado
+
+    -   audiencia debe escuchar presentaciones que no son de su especialidad
+
+    -   interacciones dedicadas a la toma de decisiones
+
+-   Énfasis difieren, conjunto de lecciones es similar
+
+## Lecciones en Data Storytelling
+
+-   Contexto: quién, qué, cómo?
+
+-   Elementos visuales más efectivos
+
+-   Botar cachureos
+
+-   Concentrar la atención
+
+-   Pensar como diseñador
+
+-   Guiar la atención
+
+-   Asegurar el mensaje
 
 ## Ejemplo: equipo de atención al cliente
 
-- Equipo de especialistas en Mesa de Ayuda. Reciben y procesan órdenes de trabajo ("tickets")
+-   Equipo de especialistas en Mesa de Ayuda (EMAs). Reciben y procesan órdenes ("tickets")
 
-- En los últimos meses no han podido procesar todos los tickets recibidos. Tuvieron dos renuncias. Antes de eso no había atrasos.
+-   Dos miembros se fueron. Hay atrasos en el procesamiento de los tickets.
 
-- La gerencia está empezando a notar estos atrasos. Te llaman, como jefe de equipo, a una reunión.
+-   La gerencia tomó nota del atraso. Te llaman, como jefe de equipo, a una reunión informativa.
 
-- Tu objetivo: reestablecer la image de tu equipo y conseguir refuerzos.
- 
-## Primer impulso: mostrar los datos
-Tickets de servicio, datos de procesados versus recibidos
+-   Tu objetivo: mejorar imagen de tu equipo y conseguir refuerzos.
+
+## Primer impulso: mostrar los datos {.build}
+
+Tickets de servicio: datos de procesados versus recibidos
 
 ```{r tickets-data, include=FALSE, cache=TRUE}
 df_t <- read_csv(file.path("data","FIG0410-14.csv")) %>% rename(ticket_type = X1) %>%
@@ -96,7 +115,6 @@ df_t <- read_csv(file.path("data","FIG0410-14.csv")) %>% rename(ticket_type = X1
                                  "Procesados"))
 
 ```
-
 
 ```{r tickets-mostrar-los_datos, echo=FALSE, cache=TRUE}
 
@@ -116,7 +134,7 @@ print(pt_md)
 
 ## Forma sigue a la función
 
-Si la importa, líneas es mejor que barras.
+Tendencia y brechas: líneas es mejor que barras.
 
 ```{r tickets-lineas-code, echo=FALSE, cache=TRUE}
 
@@ -130,8 +148,7 @@ print(pt_li)
 
 ```
 
-
-##  Llama a Marie Kondo, bota cachureos
+## Llama a Marie Kondo, bota cachureos
 
 Remover líneas verticales, horizontales y marcadores de datos
 
@@ -149,9 +166,7 @@ print(pt_dc)
 
 ```
 
-
-
-## Anotar es mejor que *legendar*
+## **Anotar** es mejor que *legendar*
 
 Leyendas suelen distraer y requieren más esfuerzo cognitivo
 
@@ -163,19 +178,18 @@ pt_an <- df_t %>% ggplot(aes(x = date, y = tickets, color = ticket_type)) +
   theme(legend.position = "none",
         panel.grid = element_blank()) + 
   annotate(geom = "text", label = "Recibidos", 
-           x = as.Date("2000-12-26"), y = 175, size = 4.5)  + 
+           x = as.Date("2000-11-30"), y = 182, size = 4)  + 
   annotate(geom = "text", label = "Procesados", 
-           x = as.Date("2000-12-28"), y = 135, size = 4.5) +
+           x = as.Date("2000-11-30"), y = 145, size = 4) +
   coord_cartesian(clip = "off") 
 
 print(pt_an)
 
 ```
 
-## El color es una herramienta para la cognición
+## Use el color para reforzar
 
 Colores ya asociados a Recibidos y Procesados. Mantenerlo así.
-
 
 ```{r tickets-colorconsistente, echo=FALSE, cache=TRUE}
 
@@ -185,9 +199,9 @@ pt_cc <- df_t %>% ggplot(aes(x = date, y = tickets, color = ticket_type)) +
   theme(legend.position = "none",
         panel.grid = element_blank()) + 
   annotate(geom = "text", label = "Recibidos", color="red",
-           x = as.Date("2000-12-26"), y = 175, size = 4.5)  + 
+           x = as.Date("2000-11-30"), y = 182, size = 4)  + 
   annotate(geom = "text", label = "Procesados", color="blue",
-           x = as.Date("2000-12-28"), y = 135, size = 4.5) +
+           x = as.Date("2000-11-30"), y = 145, size = 4) +
   coord_cartesian(clip = "off") + 
   scale_color_manual(values = c("Received" = "red",
                                 "Processed" = "blue"))
@@ -196,10 +210,7 @@ print(pt_cc)
 
 ```
 
-
 ## Concentre la atención
-
-
 
 ```{r tickets-atencion, echo=FALSE, cache=TRUE}
 pt_at <-
@@ -255,10 +266,7 @@ pt_at <-
 print(pt_at)
 ```
 
-
-
 ## Entregue un contexto
-
 
 ```{r tickets-after-code, echo=FALSE, cache=TRUE}
 
@@ -322,15 +330,15 @@ print(pt_af)
 
 ```
 
-## Incluya un llamado a la acción
+## Quiere algo? Pídalo!
 
 ```{r conpatch, fig.height=5.4, cache=TRUE}
 library(patchwork)
 
 pt_af + 
   plot_annotation(
-    title = "Por favor aprobar dos nuevos EMAs",
-    subtitle = "para recuperar los que se fueron el año pasado",
+    title = "Por favor aprobar contratación de dos nuevos EMAs",
+    subtitle = "para recuperar los que se fueron el año pasado.",
     theme = theme(plot.title = element_text(size = 20, 
                                             face = "bold"),
                   plot.subtitle = element_text(size = 10,
@@ -338,3 +346,35 @@ pt_af +
   )
 ```
 
+## Herramientas/Aprendizaje
+
+-   Estas lecciones **no** dependen de la herramienta escogida
+
+-   Dicho eso, necesita aprender al menos una :-)
+
+-   **Ven a aprender Data Storytelling con nosotros!**
+
+    -   Datos + Herramientas + Historias
+
+-   Este webinar: **todo** hecho desde `R`
+
+    -   Gráficos: ggplot2
+    -   Presentación: ioslides + RMarkdown
+
+-   Código y presentación disponible aquí
+
+## Créditos
+
+-   Ejemplo original de Cole Nussbaumer Knaflic, en Storytelling with Data.
+
+-   Código R creado a partir del código de Adam Ribaudo
+
+<!-- ## Lecciones del Data Storytelling -->
+
+<!--   + Facilitar identificación y retención: contexto, conflicto y resolución. Mencionar humanos. -->
+
+<!--   + Facilitar la comprensión: elegir elemento que más fácil de comprender. Anotaciones >> leyendas.  -->
+
+<!--   + Concentrar la atención: eliminar distracciones, inconsistencias y  exceso de información. -->
+
+<!--   + Guiar la atención: destacar lo que deben entender mejor. Apagar el resto. -->
