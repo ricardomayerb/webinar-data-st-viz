@@ -43,11 +43,14 @@ source("theme/theme_swd.R")
 
 ## Necesito Data Storytelling?
 
--   [Baja necesidad:]{style="color : blue"}análisis exploratorio, archivar datos, traspaso de datos, auditoría
+-   [Necesidad alta:]{style="color : red"} capturar audiencia, inducir una acción, audiencia no experta, situación Big Idea, periodismo de datos, comunicación masiva
+
 
 -   [Necesidad media:]{style="color : orange"} audiencia cautiva, indicadores rutinarios, audiencia experta, future-proofing
 
--   [Necesidad alta:]{style="color : red"}capturar atención, inducir una acción, audiencia no experta, situación Big Idea, periodismo de datos, comunicación masiva
+
+-   [Baja necesidad:]{style="color : gray"} análisis exploratorio, almacenamiento de datos, auditoría
+
 
 ## DST en comunicación masiva (I)
 
@@ -378,3 +381,13 @@ pt_af +
 <!--   + Concentrar la atención: eliminar distracciones, inconsistencias y  exceso de información. -->
 
 <!--   + Guiar la atención: destacar lo que deben entender mejor. Apagar el resto. -->
+
+
+
+## Gracias!!
+
+- Bueno, eso es todo :-)
+
+- Preguntas?
+
+
