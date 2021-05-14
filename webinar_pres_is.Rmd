@@ -361,7 +361,7 @@ pt_af +
     -   Gráficos: ggplot2
     -   Presentación: ioslides + RMarkdown
 
--   Código y presentación disponible aquí
+-   Código y presentación disponible aquí: https://github.com/ricardomayerb/webinar-data-st-viz
 
 ## Créditos
 
